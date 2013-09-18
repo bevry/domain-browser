@@ -1,0 +1,18 @@
+{
+  "name": "domain-browser",
+  "repo": "bevry/domain-browser",
+  "description": "Node's domain for the web browser",
+  "version": "1.0.0",
+  "keywords": [
+    "domain", "trycatch", "try", "catch", "node-compat", "ender.js", "component", "component.io", "umd", "amd", "require.js", "browser"
+  ],
+  "dependencies": {
+    "bevry/events-browser": "master"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}

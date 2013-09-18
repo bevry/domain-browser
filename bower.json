@@ -1,0 +1,24 @@
+{
+  "name": "domain",
+  "main": "index.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/bevry/domain-browser",
+  "authors": [
+    "Benjamin Lupton <b@lupton.cc>"
+  ],
+  "description": "Node's domain for the web browser",
+  "keywords": [
+    "domain", "trycatch", "try", "catch", "node-compat", "ender.js", "component", "component.io", "umd", "amd", "require.js", "browser"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "events": "~1.0.1"
+  }
+}

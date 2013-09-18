@@ -1,0 +1,15 @@
+.travis*
+Cakefile
+Makefile
+History.md
+
+src/
+out/test/
+test/
+
+build/
+components/
+template.js
+component.json
+bower.json
+index.js
