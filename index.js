@@ -4,16 +4,13 @@
     else if (typeof define === 'function' && define.amd) define(definition);
     else if (typeof provide === 'function') provide(name, definition());
     else context[name] = definition();
-})('domain', this, function(){
+})('domain-browser', this, function(){
   // Import Events
-  var events = this && this.events || null;
-  if ( !events ) {
-    try {
-      require('events-browser');
-    }
-    catch (err) {
-      require('events');
-    }
+  var events = null;
+  if ( window ) {
+    events = require('events-browser');
+  } else {
+    events = require('events');
   }
 
   // Export Domain

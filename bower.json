@@ -1,7 +1,7 @@
 {
-  "name": "domain",
+  "name": "domain-browser",
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/bevry/domain-browser",
   "authors": [
     "Benjamin Lupton <b@lupton.cc>"
@@ -19,6 +19,6 @@
     "tests"
   ],
   "dependencies": {
-    "events": "~1.0.1"
+    "events-browser": "~1.0.3"
   }
 }

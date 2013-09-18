@@ -12,23 +12,21 @@ Note, this is merely an evented try...catch with the same API as node. Nothing m
 
 ## Usage
 
-### AMD/UMD/Require.js
-Require `domain`, install: `https://raw.github.com/bevry/domain-browser/master/index.js`
+### [Node](http://nodejs.org/), [Browserify](http://browserify.org/)
+- Use: `require('domain-browser')`
+- Install: 'npm install --save domain-browser'
 
-### Bower
-Require `domain`, install `domain`
+### [Ender](http://ender.jit.su/)
+- Use: `require('domain-browser')`
+- Install: `ender add domain-browser'`
 
-### Ender.js
-Require `domain`, install `domain-browser`
+## [Component](http://github.com/component/component)
+- Use: `require('domain-browser')`
+- Install: `component install bevry/domain-browser`
 
-### Browserify
-Require `domain-browser`, install `domain-browser`
-
-### Component.io
-Require `domain-browser`, install `bevry/domain-browser`
-
-### Vanilla
-Use `window.domain` or `this.domain`, install `https://raw.github.com/bevry/domain-browser/master/index.js`
+## [Bower](http://bower.io/)
+- Use: `require('domain-browser')`
+- Install: `bower install domain-browser`
 
 
 ## History
