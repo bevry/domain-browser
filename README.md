@@ -14,7 +14,7 @@ Note, this is merely an evented try...catch with the same API as node. Nothing m
 
 ### [Node](http://nodejs.org/), [Browserify](http://browserify.org/)
 - Use: `require('domain-browser')`
-- Install: 'npm install --save domain-browser'
+- Install: `npm install --save domain-browser`
 
 ### [Ender](http://ender.jit.su/)
 - Use: `require('domain-browser')`
