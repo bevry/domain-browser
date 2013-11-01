@@ -1,17 +1,7 @@
 /*global define:false require:false */
-(function (name, context, definition) {
-    if (typeof module !== 'undefined' && module.exports) module.exports = definition();
-    else if (typeof define === 'function' && define.amd) define(definition);
-    else if (typeof provide === 'function') provide(name, definition());
-    else context[name] = definition();
-})('domain-browser', this, function(){
+module.exports = (function(){
   // Import Events
-  var events = null;
-  if ( window ) {
-    events = require('events-browser');
-  } else {
-    events = require('events');
-  }
+  var events = require('events');
 
   // Export Domain
   var domain = {};
@@ -32,4 +22,4 @@
     };
   };
   return domain;
-});
+}).call(this);
