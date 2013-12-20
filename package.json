@@ -28,6 +28,7 @@
     "require.js",
     "browser"
   ],
+  "browsers": true,
   "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
@@ -51,7 +52,7 @@
   },
   "main": "./index.js",
   "devDependencies": {
-    "projectz": "~0.2.5"
+    "projectz": "~0.3.=2"
   },
   "scripts": {
     "test": "echo 'no tests yet'"
