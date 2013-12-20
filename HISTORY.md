@@ -1,4 +1,4 @@
-## History
+# History
 
 - v1.1.0 November 1, 2013
 	- Dropped component.io and bower support, just use ender or browserify

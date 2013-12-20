@@ -52,7 +52,7 @@
   },
   "main": "./index.js",
   "devDependencies": {
-    "projectz": "~0.3.=2"
+    "projectz": "~0.3.2"
   },
   "scripts": {
     "test": "echo 'no tests yet'"
