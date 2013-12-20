@@ -52,5 +52,8 @@
   "main": "./index.js",
   "devDependencies": {
     "projectz": "~0.2.5"
+  },
+  "scripts": {
+    "test": "echo 'no tests yet'"
   }
 }
