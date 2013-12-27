@@ -1,7 +1,7 @@
 {
   "title": "Node's [domain module](http://nodejs.org/api/domain.html) for the web browser",
   "name": "domain-browser",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Note, this is merely an evented try...catch with the same API as node. Nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
   "license": {
@@ -52,9 +52,12 @@
   },
   "main": "./index.js",
   "devDependencies": {
-    "projectz": "~0.3.2"
+    "projectz": "~0.3.2",
+    "chai": "~1.8.1",
+    "joe": "~1.3.2",
+    "joe-reporter-console": "~1.2.1"
   },
   "scripts": {
-    "test": "echo 'no tests yet'"
+    "test": "node ./test.js"
   }
 }

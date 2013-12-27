@@ -35,7 +35,7 @@ Note, this is merely an evented try...catch with the same API as node. Nothing m
 ### [Browserify](http://browserify.org/)
 - Use: `require('domain-browser')`
 - Install: `npm install --save domain-browser`
-- CDN URL: `//wzrd.in/bundle/domain-browser@1.1.0`
+- CDN URL: `//wzrd.in/bundle/domain-browser@1.1.1`
 
 ### [Ender](http://ender.jit.su/)
 - Use: `require('domain-browser')`

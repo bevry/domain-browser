@@ -1,5 +1,8 @@
 # History
 
+- v1.1.1 December 27, 2013
+	- Fixed `domain.create()` not returning anything
+
 - v1.1.0 November 1, 2013
 	- Dropped component.io and bower support, just use ender or browserify
 
