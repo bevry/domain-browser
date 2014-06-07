@@ -22,5 +22,6 @@ module.exports = (function(){
     };
     return d;
   };
+  domain.createDomain = domain.create;
   return domain;
 }).call(this);
