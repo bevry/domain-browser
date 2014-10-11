@@ -38,7 +38,8 @@
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
   "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
+    "substack (https://github.com/substack)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/domain-browser/issues"

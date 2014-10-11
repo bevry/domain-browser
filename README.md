@@ -81,6 +81,7 @@ No sponsors yet! Will you be the first?
 These amazing people have contributed code to this project:
 
 - [Benjamin Lupton](https://github.com/balupton) <b@lupton.cc> — [view contributions](https://github.com/bevry/domain-browser/commits?author=balupton)
+- [substack](https://github.com/substack) — [view contributions](https://github.com/bevry/domain-browser/commits?author=substack)
 
 [Become a contributor!](https://github.com/bevry/domain-browser/blob/master/CONTRIBUTING.md#files)
 
