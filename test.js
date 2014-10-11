@@ -19,6 +19,17 @@ joe.describe('domain-browser', function(describe,it){
 		});
 	});
 
+	it('should work on uncaught exceptions', function(done){
+		var d = domain.create();
+		d.on('error', function(err){
+			expect(err && err.message).to.eql('a thrown error');
+			done();
+		});
+		d.enter();
+			throw new Error('a thrown error');
+		d.exit();
+	});
+
 	it('should be able to add emitters', function(done){
 		var d = domain.create();
 		var emitter = new events.EventEmitter();
