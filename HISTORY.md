@@ -1,5 +1,8 @@
 # History
 
+## v1.1.3 October 10, 2014
+- Added `domain.add()` and `domain.remove()`
+
 ## v1.1.2 June 8, 2014
 - Added `domain.createDomain()` alias
 	- Thanks to [James Halliday](https://github.com/substack) for [pull request #1](https://github.com/bevry/domain-browser/pull/1)
