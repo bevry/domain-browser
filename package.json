@@ -39,7 +39,8 @@
   ],
   "contributors": [
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
-    "substack (https://github.com/substack)"
+    "substack (https://github.com/substack)",
+    "Jesús Leganés Combarro 'piranna' <piranna@gmail.com> (https://github.com/piranna)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/domain-browser/issues"
