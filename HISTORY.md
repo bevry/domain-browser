@@ -1,7 +1,16 @@
 # History
 
+## v1.1.4 February 3, 2015
+- Added
+	- `domain.enter()`
+	- `domain.exit()`
+	- `domain.bind()`
+	- `domain.intercept()`
+
 ## v1.1.3 October 10, 2014
-- Added `domain.add()` and `domain.remove()`
+- Added
+	- `domain.add()`
+ 	- `domain.remove()`
 
 ## v1.1.2 June 8, 2014
 - Added `domain.createDomain()` alias
