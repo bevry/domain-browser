@@ -66,5 +66,12 @@
   },
   "scripts": {
     "test": "node ./test.js"
+  },
+  "jspm": {
+    "map": {
+      "./index.js": {
+        "node": "@node/domain"
+      }
+    }
   }
 }
