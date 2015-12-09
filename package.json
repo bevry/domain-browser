@@ -1,23 +1,34 @@
 {
-  "title": "Node's [domain module](http://nodejs.org/api/domain.html) for the web browser",
   "name": "domain-browser",
-  "version": "1.1.4",
-  "description": "Note, this is merely an evented try...catch with the same API as node. Nothing more.",
+  "version": "1.1.5",
+  "description": "Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
-  "license": {
-    "type": "MIT"
-  },
+  "license": "MIT",
   "badges": {
-    "travis": true,
-    "npm": true,
-    "npmdownloads": true,
-    "david": true,
-    "daviddev": true,
-    "gratipay": "bevry",
-    "flattr": "344188/balupton-on-Flattr",
-    "paypal": "QB8GQPZAH84N6",
-    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a",
-    "wishlist": "http://amzn.com/w/2F8TXKSNAFG4V"
+    "list": [
+      "travisci",
+      "npmversion",
+      "npmdownloads",
+      "daviddm",
+      "daviddmdev",
+      "---",
+      "slackin",
+      "patreon",
+      "gratipay",
+      "flattr",
+      "paypal",
+      "bitcoin",
+      "wishlist"
+    ],
+    "config": {
+      "patreonUsername": "bevry",
+      "gratipayUsername": "bevry",
+      "flattrCode": "344188/balupton-on-Flattr",
+      "paypalButtonID": "QB8GQPZAH84N6",
+      "bitcoinURL": "https://bevry.me/bitcoin",
+      "wishlistURL": "https://bevry.me/wishlist",
+      "slackinURL": "https://slack.bevry.me"
+    }
   },
   "keywords": [
     "domain",
@@ -34,14 +45,15 @@
     "browser"
   ],
   "browsers": true,
-  "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
   ],
   "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
-    "evansolomon (https://github.com/evansolomon)",
-    "substack (https://github.com/substack)"
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
+    "Evan Solomon (http://evansolomon.me)",
+    "James Halliday <substack@gmail.com> (http://substack.net/)",
+    "Guy Bedford <guybedford@gmail.com> (twitter.com/guybedford)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/domain-browser/issues"
@@ -51,27 +63,35 @@
     "url": "http://github.com/bevry/domain-browser.git"
   },
   "engines": {
-    "node": ">=0.4",
-    "npm": ">=1.2"
+    "node": ">=0.12"
   },
-  "directories": {
-    "lib": "./"
+  "devDependencies": {
+    "assert-helpers": "^4.1.0",
+    "eslint": "^1.10.3",
+    "joe": "^1.6.0",
+    "joe-reporter-console": "^1.2.1",
+    "projectz": "^1.0.8"
   },
   "main": "./index.js",
-  "devDependencies": {
-    "projectz": "~0.3.17",
-    "chai": "~1.10.0",
-    "joe": "~1.5.0",
-    "joe-reporter-console": "~1.2.1"
-  },
-  "scripts": {
-    "test": "node ./test.js"
-  },
   "jspm": {
     "map": {
       "./index.js": {
         "node": "@node/domain"
       }
     }
+  },
+  "scripts": {
+    "clean": "node --harmony nakefile.js clean",
+    "setup": "node --harmony nakefile.js setup",
+    "compile": "node --harmony nakefile.js compile",
+    "watch": "node --harmony nakefile.js watch",
+    "verify": "node --harmony nakefile.js verify",
+    "meta": "node --harmony nakefile.js meta",
+    "prepare": "node --harmony nakefile.js prepare",
+    "release": "node --harmony nakefile.js release",
+    "test": "node --harmony ./test.js"
+  },
+  "dependencies": {
+    "assert-helpers": "^4.1.0"
   }
 }
