@@ -1,6 +1,6 @@
 {
   "name": "domain-browser",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
   "license": "MIT",
@@ -44,7 +44,6 @@
     "require.js",
     "browser"
   ],
-  "browsers": true,
   "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
@@ -53,7 +52,8 @@
     "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
     "Evan Solomon (http://evansolomon.me)",
     "James Halliday <substack@gmail.com> (http://substack.net/)",
-    "Guy Bedford <guybedford@gmail.com> (twitter.com/guybedford)"
+    "Guy Bedford <guybedford@gmail.com> (twitter.com/guybedford)",
+    "Bogdan Chadkin <trysound@yandex.ru> (https://github.com/TrySound)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/domain-browser/issues"
@@ -65,6 +65,8 @@
   "engines": {
     "node": ">=0.12"
   },
+  "browsers": true,
+  "dependencies": {},
   "devDependencies": {
     "assert-helpers": "^4.1.0",
     "eslint": "^1.10.3",

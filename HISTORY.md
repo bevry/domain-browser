@@ -1,9 +1,13 @@
 # History
 
+## v1.1.6 2015 December 12
+- Fixed `assert-helpers` sneaking into `dependencies`
+	- Thanks to [Bogdan Chadkin](https://github.com/TrySound) for [Pull Request #8](https://github.com/bevry/domain-browser/pull/8)
+
 ## v1.1.5 2015 December 9
 - Updated internal conventions
 - Added better jspm support
-	- Thanks to [Guy Bedford](https://github.com/guybedford) for [pull request #7](https://github.com/bevry/domain-browser/pull/7)
+	- Thanks to [Guy Bedford](https://github.com/guybedford) for [Pull Request #7](https://github.com/bevry/domain-browser/pull/7)
 
 ## v1.1.4 2015 February 3
 - Added
@@ -19,7 +23,7 @@
 
 ## v1.1.2 2014 June 8
 - Added `domain.createDomain()` alias
-	- Thanks to [James Halliday](https://github.com/substack) for [pull request #1](https://github.com/bevry/domain-browser/pull/1)
+	- Thanks to [James Halliday](https://github.com/substack) for [Pull Request #1](https://github.com/bevry/domain-browser/pull/1)
 
 ## v1.1.1 2013 December 27
 - Fixed `domain.create()` not returning anything
