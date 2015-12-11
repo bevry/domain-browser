@@ -90,8 +90,5 @@
     "prepare": "node --harmony nakefile.js prepare",
     "release": "node --harmony nakefile.js release",
     "test": "node --harmony ./test.js"
-  },
-  "dependencies": {
-    "assert-helpers": "^4.1.0"
   }
 }
