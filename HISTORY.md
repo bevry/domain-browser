@@ -1,5 +1,9 @@
 # History
 
+## v1.1.7 2015 December 12
+- Revert minimum node version from 0.12 back to 0.4
+	- Thanks to [Alexander Sorokin](https://github.com/syrnick) for [this comment](https://github.com/bevry/domain-browser/commit/c66ee3445e87955e70d0d60d4515f2d26a81b9c4#commitcomment-14938325)
+
 ## v1.1.6 2015 December 12
 - Fixed `assert-helpers` sneaking into `dependencies`
 	- Thanks to [Bogdan Chadkin](https://github.com/TrySound) for [Pull Request #8](https://github.com/bevry/domain-browser/pull/8)

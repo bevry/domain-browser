@@ -42,7 +42,7 @@ Node's domain module for the web browser. This is merely an evented try...catch 
 <a href="http://browserify.org" title="Browserify lets you require('modules') in the browser by bundling up all of your dependencies"><h3>Browserify</h3></a><ul>
 <li>Install: <code>npm install --save domain-browser</code></li>
 <li>Use: <code>require('domain-browser')</code></li>
-<li>CDN URL: <code>//wzrd.in/bundle/domain-browser@1.1.6</code></li></ul>
+<li>CDN URL: <code>//wzrd.in/bundle/domain-browser@1.1.7</code></li></ul>
 
 <a href="http://enderjs.com" title="Ender is a full featured package manager for your browser"><h3>Ender</h3></a><ul>
 <li>Install: <code>ender add domain-browser</code></li>

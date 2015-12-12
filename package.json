@@ -1,6 +1,6 @@
 {
   "name": "domain-browser",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
   "license": "MIT",
@@ -63,17 +63,10 @@
     "url": "http://github.com/bevry/domain-browser.git"
   },
   "engines": {
-    "node": ">=0.12"
+    "node": ">=0.4",
+    "npm": ">=1.2"
   },
   "browsers": true,
-  "dependencies": {},
-  "devDependencies": {
-    "assert-helpers": "^4.1.0",
-    "eslint": "^1.10.3",
-    "joe": "^1.6.0",
-    "joe-reporter-console": "^1.2.1",
-    "projectz": "^1.0.8"
-  },
   "main": "./index.js",
   "jspm": {
     "map": {
@@ -81,6 +74,14 @@
         "node": "@node/domain"
       }
     }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "assert-helpers": "^4.1.0",
+    "eslint": "^1.10.3",
+    "joe": "^1.6.0",
+    "joe-reporter-console": "^1.2.1",
+    "projectz": "^1.0.8"
   },
   "scripts": {
     "clean": "node --harmony nakefile.js clean",
