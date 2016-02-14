@@ -14,7 +14,7 @@ module.exports = (function () {
 			d.emit('error', e)
 		}
 		
-		function wrapFns() {
+		function wrapAsyncFns() {
 			var fns
 			var oldSetImmediate
 			var oldSetTimeout = setTimeout
@@ -42,7 +42,7 @@ module.exports = (function () {
 			return fns;
 		}
 
-		function unwrapFns(fns) {
+		function unwrapAsyncFns(fns) {
 			setTimeout = fns.setTimeout
 			setInterval = fns.setInterval
 			if (fns.setImmedate) {
@@ -52,17 +52,17 @@ module.exports = (function () {
 		
 		function wrapFn(fn, args) {
 			return function() {
-				var fns = wrapFns()
+				var fns = wrapAsyncFns()
 				var hasError = true
 				try {
 					fn.apply(null, args)
 					hasError = false
 				} catch(err) {
-					unwrapFns(fns)
+					unwrapAsyncFns(fns)
 					emitError(err)
 				}
 				if (!hasError) {
-					unwrapFns(fns)
+					unwrapAsyncFns(fns)
 				}
 			}
 		}
