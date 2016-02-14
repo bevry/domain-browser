@@ -76,6 +76,7 @@ joe.describe('domain-browser', function (describe, it) {
 	it('bind setTimeout error', function (done) {
 		const d = domain.create()
 		d.on('error', function (err) {
+			equal(setTimeout, currentSetTimeout)
 			equal(err && err.message, 'a thrown error', 'error message')
 			done()
 		});

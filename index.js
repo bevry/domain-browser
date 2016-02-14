@@ -53,12 +53,17 @@ module.exports = (function () {
 		function wrapFn(fn, args) {
 			return function() {
 				var fns = wrapFns()
+				var hasError = true
 				try {
 					fn.apply(null, args)
+					hasError = false
 				} catch(err) {
+					unwrapFns(fns)
 					emitError(err)
 				}
-				unwrapFns(fns)
+				if (!hasError) {
+					unwrapFns(fns)
+				}
 			}
 		}
 
