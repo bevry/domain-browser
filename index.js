@@ -103,9 +103,5 @@ module.exports = (function () {
 		}
 		return d
 	}
-	
-	function catchFn(fn) {
-		tr
-	}
 	return domain;
 }).call(this)
