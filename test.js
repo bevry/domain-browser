@@ -73,6 +73,97 @@ joe.describe('domain-browser', function (describe, it) {
 		})(new Error('a passed error'), 2, 3)
 	})
 
+	it('bind setTimeout error', function (done) {
+		const d = domain.create()
+		d.on('error', function (err) {
+			equal(setTimeout, currentSetTimeout)
+			equal(err && err.message, 'a thrown error', 'error message')
+			done()
+		});
+		var currentSetTimeout = setTimeout;
+		d.bind(function (err, a, b) {
+			equal(err && err.message, 'a passed error', 'error message')
+			equal(a, 2, 'value of a')
+			equal(b, 3, 'value of b')
+			
+			setTimeout(function() {
+				throw new Error('a thrown error')
+			}, 5)
+			
+		})(new Error('a passed error'), 2, 3)
+		
+		// Should not affect timeout outside domain
+		equal(setTimeout, currentSetTimeout)
+	})
+
+	it('bind nested setTimeout error', function (done) {
+		const d = domain.create()
+		d.on('error', function (err) {
+			equal(err && err.message, 'a thrown error', 'error message')
+			done()
+		});
+		d.bind(function (err, a, b) {
+			equal(err && err.message, 'a passed error', 'error message')
+			equal(a, 2, 'value of a')
+			equal(b, 3, 'value of b');
+			setTimeout(function() {
+				setTimeout(function() {
+					throw new Error('a thrown error');
+				}, 10);
+			}, 10);
+		})(new Error('a passed error'), 2, 3)
+	})
+
+	it('bind setInterval error', function (done) {
+		const d = domain.create()
+		d.on('error', function (err) {
+			equal(err && err.message, 'a thrown error', 'error message')
+			done()
+		});
+		var currentSetInterval = setInterval;
+		d.bind(function (err, a, b) {
+			equal(err && err.message, 'a passed error', 'error message')
+			equal(a, 2, 'value of a')
+			equal(b, 3, 'value of b')
+
+			var index = 0;
+			var int = setInterval(function() {
+				if (index) {
+					clearInterval(int)
+					throw new Error('a thrown error')
+				}
+				index++
+			}, 5)
+
+		})(new Error('a passed error'), 2, 3)
+
+		// Should not affect timeout outside domain
+		equal(setInterval, currentSetInterval)
+	})
+
+	it('bind setImmediate error', function (done) {
+		const d = domain.create()
+		d.on('error', function (err) {
+			equal(err && err.message, 'a thrown error', 'error message')
+			done()
+		});
+		var currentSetImmediate = setImmediate;
+		d.bind(function (err, a, b) {
+			equal(err && err.message, 'a passed error', 'error message')
+			equal(a, 2, 'value of a')
+			equal(b, 3, 'value of b')
+
+			var index = 0;
+			setImmediate(function() {
+				throw new Error('a thrown error')
+			}, 5)
+
+		})(new Error('a passed error'), 2, 3)
+
+		// Should not affect timeout outside domain
+		equal(setImmediate, currentSetImmediate)
+	})
+
 	it('intercept should work', function (done) {
 		const d = domain.create()
 		let count = 0

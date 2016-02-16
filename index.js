@@ -13,6 +13,59 @@ module.exports = (function () {
 		function emitError (e) {
 			d.emit('error', e)
 		}
+		
+		function wrapAsyncFns() {
+			var fns
+			var oldSetImmediate
+			var oldSetTimeout = setTimeout
+			var oldSetInterval = setInterval
+			
+			setTimeout = function setTimeoutDomain(fn, time) {
+				return oldSetTimeout(wrapFn(fn), time)
+			}
+			setInterval = function setIntervalDomain(fn, time) {
+				return oldSetInterval(wrapFn(fn), time)
+			}
+			
+			fns = {
+				setTimeout: oldSetTimeout,
+				setInterval: oldSetInterval
+			}
+			if (typeof setImmediate === 'function') {
+				oldSetImmediate = setImmediate
+				setImmediate = function setImmedate(fn) {
+					return oldSetImmediate(wrapFn(fn))
+				}
+				fns.setImmedate = oldSetImmediate
+			}
+			
+			return fns
+		}
+
+		function unwrapAsyncFns(fns) {
+			setTimeout = fns.setTimeout
+			setInterval = fns.setInterval
+			if (fns.setImmedate) {
+				setImmediate = fns.setImmedate
+			}
+		}
+		
+		function wrapFn(fn, args) {
+			return function() {
+				var fns = wrapAsyncFns()
+				var hasError = true
+				try {
+					fn.apply(null, args)
+					hasError = false
+				} catch(err) {
+					unwrapAsyncFns(fns)
+					emitError(err)
+				}
+				if (!hasError) {
+					unwrapAsyncFns(fns)
+				}
+			}
+		}
 
 		d.add = function (emitter) {
 			emitter.on('error', emitError)
@@ -23,12 +76,7 @@ module.exports = (function () {
 		d.bind = function (fn) {
 			return function () {
 				var args = Array.prototype.slice.call(arguments)
-				try {
-					fn.apply(null, args)
-				}
-				catch (err) {
-					emitError(err)
-				}
+				wrapFn(fn, args)()
 			}
 		}
 		d.intercept = function (fn) {
@@ -38,22 +86,12 @@ module.exports = (function () {
 				}
 				else {
 					var args = Array.prototype.slice.call(arguments, 1)
-					try {
-						fn.apply(null, args)
-					}
-					catch (err) {
-						emitError(err)
-					}
+					wrapFn(fn, args)()
 				}
 			}
 		}
 		d.run = function (fn) {
-			try {
-				fn()
-			}
-			catch (err) {
-				emitError(err)
-			}
+			wrapFn(fn)()
 			return this
 		}
 		d.dispose = function () {
