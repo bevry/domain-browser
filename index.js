@@ -22,10 +22,10 @@ module.exports = (function () {
 			
 			setTimeout = function setTimeoutDomain(fn, time) {
 				return oldSetTimeout(wrapFn(fn), time)
-			};
+			}
 			setInterval = function setIntervalDomain(fn, time) {
 				return oldSetInterval(wrapFn(fn), time)
-			};
+			}
 			
 			fns = {
 				setTimeout: oldSetTimeout,
@@ -39,7 +39,7 @@ module.exports = (function () {
 				fns.setImmedate = oldSetImmediate
 			}
 			
-			return fns;
+			return fns
 		}
 
 		function unwrapAsyncFns(fns) {
@@ -86,12 +86,12 @@ module.exports = (function () {
 				}
 				else {
 					var args = Array.prototype.slice.call(arguments, 1)
-					wrapFn(fn, args)();
+					wrapFn(fn, args)()
 				}
 			}
 		}
 		d.run = function (fn) {
-			wrapFn(fn)();
+			wrapFn(fn)()
 			return this
 		}
 		d.dispose = function () {
@@ -103,5 +103,5 @@ module.exports = (function () {
 		}
 		return d
 	}
-	return domain;
+	return domain
 }).call(this)
