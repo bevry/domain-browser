@@ -1,6 +1,7 @@
 // This file should be ES5 compatible
 /* eslint prefer-spread:0, no-var:0, prefer-reflect:0, no-magic-numbers:0 */
 'use strict'
+
 module.exports = (function () {
 	// Import Events
 	var events = require('events')

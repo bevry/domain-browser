@@ -1,48 +1,17 @@
-// 2015 December 1
+// 2018 January 26
 // https://github.com/bevry/base
 // http://eslint.org
+// This code must be able to run on Node 0.10
 /* eslint no-warning-comments: 0 */
 'use strict'
 
 const IGNORE = 0, WARN = 1, ERROR = 2, MAX_PARAMS = 4
 
-module.exports = {
-	// parser: 'babel-eslint',
-	// ^ the bundled ESLINT parser is now actually quite good, and supports the ecmaFeatures property
-	ecmaFeatures: {
-		// this property only works with the bundled ESLINT parser, not babel-eslint
-		arrowFunctions: true,
-		binaryLiterals: true,
-		blockBindings: true,
-		classes: true,
-		defaultParams: true,
-		destructuring: true,
-		forOf: true,
-		generators: true,
-		modules: false,  // Disabled due to https://twitter.com/balupton/status/671519915795345410
-		objectLiteralComputedProperties: true,
-		objectLiteralDuplicateProperties: true,
-		objectLiteralShorthandMethods: true,
-		objectLiteralShorthandProperties: true,
-		octalLiterals: true,
-		regexUFlag: true,
-		regexYFlag: true,
-		restParams: true,
-		spread: true,
-		superInFunctions: true,
-		templateStrings: true,
-		unicodeCodePointEscapes: true,
-		globalReturn: true,
-		jsx: true,
-		experimentalObjectRestSpread: true
-	},
-	env: {
-		browser: true,
-		node: true,
-		es6: true,
-		commonjs: true,
-		amd: true
-	},
+const config = {
+	extends: ['eslint:recommended'],
+	plugins: [],
+	parserOptions: { ecmaFeatures: {} },
+	env: {},
 	rules: {
 		// ----------------------------
 		// Problems with these rules
@@ -70,17 +39,15 @@ module.exports = {
 		// Possible Errors
 		// The following rules point out areas where you might have made mistakes.
 
-		// ES6 supports dangling commas
-		'comma-dangle': IGNORE,
-
 		// Don't allow assignments in conditional statements (if, while, etc.)
 		'no-cond-assign': [ERROR, 'always'],
 
 		// Warn but don't error about console statements
 		'no-console': WARN,
 
+		// Sometimes useful for debugging
 		// Allow while(true) loops
-		'no-constant-condition': IGNORE,
+		'no-constant-condition': WARN,
 
 		// Seems like a good idea to error about this
 		'no-control-regex': ERROR,
@@ -97,11 +64,11 @@ module.exports = {
 		// Disallow duplicate case statements in a switch
 		'no-duplicate-case': ERROR,
 
-		// Disallow empty [] in regular expressions as they cause unexpected behaviour
-		'no-empty-character-class': ERROR,
-
 		// Allow empty block statements, they are useful for clarity
 		'no-empty': IGNORE,
+
+		// Disallow empty [] in regular expressions as they cause unexpected behaviour
+		'no-empty-character-class': ERROR,
 
 		// Overwriting the exception argument in a catch statement can cause memory leaks in some browsers
 		'no-ex-assign': ERROR,
@@ -113,7 +80,7 @@ module.exports = {
 		'no-extra-parens': IGNORE,
 
 		// Disallow superflous semicolons, they offer no value
-		'no-extra-semi': IGNORE,
+		'no-extra-semi': ERROR,
 
 		// Seems like a good idea to error about this
 		'no-func-assign': ERROR,
@@ -128,10 +95,10 @@ module.exports = {
 		'no-irregular-whitespace': ERROR,
 
 		// Seems like a good idea to error about this
-		'no-negated-in-lhs': ERROR,
-
-		// Seems like a good idea to error about this
 		'no-obj-calls': ERROR,
+
+		// Not enough justification to change our existing use
+		'no-prototype-builtins': IGNORE,
 
 		// Seems like a good idea to error about this
 		// Instead of /  /  used / {ERROR}/ instead
@@ -140,6 +107,9 @@ module.exports = {
 		// Seems like a good idea to error about this
 		'no-sparse-arrays': ERROR,
 
+		// Probably an error on our part, so warn
+		'no-template-curly-in-string': WARN,
+
 		// Seems like a good idea to error about this
 		'no-unexpected-multiline': ERROR,
 
@@ -147,10 +117,19 @@ module.exports = {
 		'no-unreachable': ERROR,
 
 		// Seems like a good idea to error about this
+		'no-unsafe-finally': ERROR,
+
+		// Seems like a good idea to error about this
+		'no-unsafe-negation': ERROR,
+
+		// Seems like a good idea to error about this
 		'use-isnan': ERROR,
 
-		// We use YUIdoc, not JSDoc
-		'valid-jsdoc': IGNORE,
+		// We use JSDoc again
+		'valid-jsdoc': [ERROR, {
+			requireParamDescription: false,
+			requireReturnDescription: false
+		}],
 
 		// Seems like a good idea to error about this
 		'valid-typeof': ERROR,
@@ -160,16 +139,24 @@ module.exports = {
 		// Best Practices
 		// These are rules designed to prevent you from making mistakes. They either prescribe a better way of doing something or help you avoid footguns.
 
-		// Meh
+		// Often we only need one, setting both doesn't make sense
+		// Enforces getter/setter pairs in objects
 		'accessor-pairs': IGNORE,
+
+		// Seems sensible
+		// Enforces return statements in callbacks of array's methods
+		'array-callback-return': ERROR,
 
 		// This rule seems buggy
 		'block-scoped-var': IGNORE,
 
+		// Seems interesting, lets give it a go
+		'class-methods-use-this': WARN,
+
 		// Disable complexity checks, they are annoying and not that useful in detecting actual complexity
 		'complexity': IGNORE,
 
-		// We use blank returns for break statements
+		// We use blank returns for break statements and for returning void
 		'consistent-return': IGNORE,
 
 		// Always require curly braces unless the statement is all on a single line
@@ -210,8 +197,9 @@ module.exports = {
 		// Returns in else statements offer code clarity, so disable this rule
 		'no-else-return': IGNORE,
 
-		// Seems like a good idea to error about this
-		'no-empty-label': ERROR,
+		// Up to developer sensibility
+		// disallow use of empty functions
+		'no-empty-function': IGNORE,
 
 		// Seems sensible
 		'no-empty-pattern': ERROR,
@@ -228,14 +216,23 @@ module.exports = {
 		// Don't allow useless binds
 		'no-extra-bind': ERROR,
 
+		// Seems sensible
+		'no-extra-label': ERROR,
+
 		// Don't allow switch case statements to follow through, use continue keyword instead
 		'no-fallthrough': ERROR,
 
 		// Use zero when doing decimals, otherwise it is confusing
 		'no-floating-decimal': ERROR,
 
+		// Seems sensible
+		'no-global-assign': ERROR,
+
 		// Cleverness is unclear
 		'no-implicit-coercion': ERROR,
+
+		// Seems sensible providing detection works correctly
+		'no-implicit-globals': ERROR,
 
 		// A sneaky way to do evals
 		'no-implied-eval': ERROR,
@@ -255,9 +252,8 @@ module.exports = {
 		// Loop functions always cause problems, as the scope isn't clear through iterations
 		'no-loop-func': ERROR,
 
-		// This is a great idea
-		// Although ignore -1 and 0 as it is common with indexOf
-		'no-magic-numbers': [WARN, { ignore: [-1, 0] }],
+		// Far too annoying
+		'no-magic-numbers': IGNORE,
 
 		// We like multi spaces for clarity
 		// E.g. We like
@@ -269,9 +265,6 @@ module.exports = {
 
 		// Use ES6 template strings instead
 		'no-multi-str': ERROR,
-
-		// Would be silly to allow this
-		'no-native-reassign': ERROR,
 
 		// We never use this, it seems silly to allow this
 		'no-new-func': ERROR,
@@ -292,20 +285,23 @@ module.exports = {
 		// As such, take any usage as intentional and aware
 		'no-param-reassign': IGNORE,
 
-		// We use process.env wisely
-		'no-process-env': IGNORE,
-
 		// We never use this, it seems silly to allow this
 		'no-proto': ERROR,
 
 		// We never use this, it seems silly to allow this
 		'no-redeclare': ERROR,
 
+		// No defaults for this that are useful
+		'no-restricted-properties': IGNORE,
+
 		// We never use this, it seems silly to allow this
 		'no-return-assign': ERROR,
 
 		// We never use this, it seems silly to allow this
 		'no-script-url': ERROR,
+
+		// Seems sensible
+		'no-self-assign': ERROR,
 
 		// We never use this, it seems silly to allow this
 		'no-self-compare': ERROR,
@@ -316,14 +312,23 @@ module.exports = {
 		// We always want proper error objects as they have stack traces and respond to instanceof Error checks
 		'no-throw-literal': ERROR,
 
+		// Could be a getter, so warn
+		'no-unmodified-loop-condition': WARN,
+
 		// We never use this, it seems silly to allow this
 		'no-unused-expressions': ERROR,
+
+		// Seems sensible
+		'no-unused-labels': ERROR,
 
 		// Seems sensible
 		'no-useless-call': ERROR,
 
 		// Seems sensible
 		'no-useless-concat': ERROR,
+
+		// Seems sensible
+		'no-useless-escape': ERROR,
 
 		// We never use this, it seems silly to allow this
 		'no-void': ERROR,
@@ -362,7 +367,7 @@ module.exports = {
 		// These rules have to do with variable declarations.
 
 		// We don't care
-		'init-declaration': IGNORE,
+		'init-declarations': IGNORE,
 
 		// Don't allow the catch method to shadow objects as browsers handle this differently
 		// Update: We don't care for IE8
@@ -373,6 +378,9 @@ module.exports = {
 
 		// We never use this, it seems silly to allow this
 		'no-label-var': ERROR,
+
+		// No useful defaults
+		'no-restricted-globals': IGNORE,
 
 		// We never use this, it seems silly to allow this
 		'no-shadow-restricted-names': ERROR,
@@ -418,6 +426,9 @@ module.exports = {
 		// Always use path.join for windows support
 		'no-path-concat': ERROR,
 
+		// We use process.env wisely
+		'no-process-env': IGNORE,
+
 		// We know what we are doing
 		'no-process-exit': IGNORE,
 
@@ -444,6 +455,9 @@ module.exports = {
 		// Use camel case
 		'camelcase': ERROR,
 
+		// ES6 supports dangling commas
+		'comma-dangle': [ERROR, 'never'],
+
 		// Require a comma after always
 		'comma-spacing': [ERROR, { before: false, after: true }],
 
@@ -459,11 +473,21 @@ module.exports = {
 		// Enable to make UNIX people's lives easier
 		'eol-last': ERROR,
 
+		// We never use this, it seems silly to allow this
+		'func-call-spacing': [ERROR, 'never'],
+
+		// This rule is not currently useful
+		'func-name-matching': IGNORE,
+
 		// We like anonymous functions
 		'func-names': IGNORE,
 
 		// Prefer to define functions via variables
 		'func-style': [WARN, 'declaration'],
+
+		// Nothing we want to blacklist
+		// blacklist certain identifiers to prevent them being used
+		'id-blacklist': IGNORE,
 
 		// Sometimes short names are appropriate
 		'id-length': IGNORE,
@@ -472,7 +496,21 @@ module.exports = {
 		'id-match': IGNORE,
 
 		// Use tabs and indent case blocks
-		'indent': [ERROR, 'tab', { SwitchCase: WARN }],
+		'indent': [ERROR, 'tab', {
+			SwitchCase: 1,
+			VariableDeclarator: 0,
+			outerIIFEBody: 1,
+			MemberExpression: 1,
+			FunctionDeclaration: {
+				body: 1,
+				parameters: 0
+			},
+			FunctionExpression: {
+				body: 1,
+				parameters: 0
+			}
+		}],
+		// ^ broken before, let us try again
 
 		// Prefer double qoutes for JSX properties: <a b="c" />, <a b='"' />
 		'jsx-quotes': [ERROR, 'prefer-double'],
@@ -483,11 +521,26 @@ module.exports = {
 			afterColon: true
 		}],
 
+		// Always force a space before and after a keyword
+		'keyword-spacing': [ERROR],
+
+		// we use both
+		'line-comment-position': IGNORE,
+
 		// Enforce unix line breaks
 		'linebreak-style': [ERROR, 'unix'],
 
 		// Enforce new lines before block comments
-		'lines-around-comment': [ERROR, { beforeBlockComment: true, allowBlockStart: true }],
+		'lines-around-comment': [ERROR, {
+			beforeBlockComment: true,
+			allowBlockStart: true
+		}],
+
+		// Enforce directives with no line above but a line below
+		'lines-around-directive': [ERROR, {
+			before: 'never',
+			after: 'always'
+		}],
 
 		// Disabled to ensure consistency with complexity option
 		'max-depth': IGNORE,
@@ -495,14 +548,24 @@ module.exports = {
 		// We use soft wrap
 		'max-len': IGNORE,
 
+		// Perhaps in the future we can set this to 300 or so
+		// but for now it is not useful for the things we write and maintain
+		'max-lines': IGNORE,
+
 		// We are smart enough to know if this is bad or not
 		'max-nested-callbacks': IGNORE,
 
 		// Sometimes we have no control over this for compat reasons, so just warn
 		'max-params': [WARN, MAX_PARAMS],
 
+		// Let's give this a go and see what is appropriate for our usage
+		'max-statements-per-line': [WARN, { max: 1 }],
+
 		// We should be able to use whatever feels right
 		'max-statements': IGNORE,
+
+		// Current options are not useful
+		'multiline-ternary': IGNORE,
 
 		// Constructors should be CamelCase
 		'new-cap': ERROR,
@@ -511,7 +574,12 @@ module.exports = {
 		'new-parens': ERROR,
 
 		// Too difficult to enforce correctly as too many edge-cases
+		// require or disallow an empty newline after variable declarations
 		'newline-after-var': IGNORE,
+
+		// Let the author decide
+		// enforce newline after each call when chaining the calls
+		'newline-per-chained-call': IGNORE,
 
 		// Don't use the array constructor when it is not needed
 		'no-array-constructor': ERROR,
@@ -528,8 +596,11 @@ module.exports = {
 		// The code could be optimised if this error occurs
 		'no-lonely-if': ERROR,
 
+		// Seems sensible, let's see how we go with this
+		'no-mixed-operators': ERROR,
+
 		// Don't mix spaces and tabs
-		// @TODO maybe [ERROR, 'smart-tabs'] will be better, we will see
+		// Maybe [ERROR, 'smart-tabs'] will be better, we will see
 		'no-mixed-spaces-and-tabs': ERROR,
 
 		// We use multiple empty lines for styling
@@ -550,8 +621,8 @@ module.exports = {
 		// Handled by other rules
 		'no-restricted-syntax': IGNORE,
 
-		// We never use this, it seems silly to allow this
-		'no-spaced-func': ERROR,
+		// We use tabs
+		'no-tabs': IGNORE,
 
 		// Sometimes ternaries are useful
 		'no-ternary': IGNORE,
@@ -565,11 +636,19 @@ module.exports = {
 		// Sensible
 		'no-unneeded-ternary': ERROR,
 
+		// Seems sensible
+		'no-whitespace-before-property': ERROR,
+
+		// Object indentation should be consistent within the object
+		// Ignore until https://github.com/eslint/eslint/issues/7434 is done
+		'object-curly-newline': [IGNORE, { multiline: true }],
+
 		// Desirable, but too many edge cases it turns out where it is actually preferred
-		'object-curly-spacing': IGNORE, // [ERROR, 'always'],
+		'object-curly-spacing': IGNORE,
 
 		// We like multiple var statements
 		'one-var': IGNORE,
+		'one-var-declaration-per-line': IGNORE,
 
 		// Force use of shorthands when available
 		'operator-assignment': [ERROR, 'always'],
@@ -582,6 +661,7 @@ module.exports = {
 		'padded-blocks': IGNORE,
 
 		// Seems like a good idea to error about this
+		// was broken before, but lets give a go again
 		'quote-props': [ERROR, 'consistent-as-needed'],
 
 		// Use single quotes where escaping isn't needed
@@ -596,23 +676,17 @@ module.exports = {
 		// Never use semicolons
 		'semi': [ERROR, 'never'],
 
-		// We don't care if our vars are alphabetical
-		'sort-vars': IGNORE,
+		// Importance makes more sense than alphabetical
+		'sort-keys': IGNORE,
 
-		// Always force a space after a keyword
-		'space-after-keywords': [ERROR, 'always'],
+		// Importance makes more sense than alphabetical
+		'sort-vars': IGNORE,
 
 		// Always force a space before a {
 		'space-before-blocks': [ERROR, 'always'],
 
 		// function () {, get blah () {
 		'space-before-function-paren': [ERROR, 'always'],
-
-		// We do this
-		'space-before-keywords': [ERROR, 'always'],
-
-		// This is for spacing between [], so [ WARN, ERROR, 3 ] which we don't want
-		'space-in-brackets': IGNORE,
 
 		// This is for spacing between (), so doSomething( WARN, ERROR, 3 ) or if ( WARN === 3 )
 		// which we want for ifs, but don't want for calls
@@ -622,22 +696,21 @@ module.exports = {
 		'space-infix-ops': ERROR,
 
 		// We use this
-		'space-return-throw-case': ERROR,
-
-		// We use this
 		'space-unary-ops': ERROR,
 
 		// We use this
 		// 'spaced-line-comment': ERROR,
 		'spaced-comment': ERROR,
 
-		// We use this
-		// @TODO revise this
+		// When would we ever do this? Makes no sense
+		'unicode-bom': [ERROR, 'never'],
+
+		// We do this, seems to work well
 		'wrap-regex': ERROR,
 
 
 		// --------------------------------------
-		// ECMAScript 6
+		// ECMAScript 6 / ES6
 
 		// Sensible to create more informed and clear code
 		'arrow-body-style': [ERROR, 'as-needed'],
@@ -654,24 +727,41 @@ module.exports = {
 		// Seems the most consistent location for it
 		'generator-star-spacing': [ERROR, 'before'],
 
-		// Seems sensible
-		'no-arrow-condition': ERROR,
-
-		// Seems sensible
+		// Makes sense
 		'no-class-assign': ERROR,
 
-		// Makes sense as otherwise runtime error will occur
+		// Makes sense
+		'no-confusing-arrow': ERROR,
+
+		// Of course
 		'no-const-assign': ERROR,
 
-		// Makes sense as otherwise runtime error will occur
+		// Of course
 		'no-dupe-class-members': ERROR,
+
+		// Seems sensible, may be times when we want this
+		'no-duplicate-imports': WARN,
+
+		// Seems sensible
+		'no-new-symbol': ERROR,
+
+		// No need to disallow any imports
+		'no-restricted-imports': IGNORE,
 
 		// Makes sense as otherwise runtime error will occur
 		'no-this-before-super': ERROR,
 
-		// @TODO This probably should be an error
-		// however it is useful for: for ( var key in obj ) {
-		// which hopefully is more performant than let (@TODO check if it actually is more performant)
+		// Seems sensible
+		'no-useless-computed-key': ERROR,
+
+		// Seems sensible
+		'no-useless-constructor': ERROR,
+
+		// Seems sensible
+		'no-useless-rename': ERROR,
+
+		// Of course
+		// However, would be good to have this adjusted per environment
 		'no-var': WARN,
 
 		// Enforce ES6 object shorthand
@@ -682,12 +772,19 @@ module.exports = {
 		// https://travis-ci.org/bevry/es6-benchmarks
 		'prefer-arrow-callback': IGNORE,
 
-		// Sure, why not
-		'prefer-const': WARN,
+		// Of course
+		'prefer-const': ERROR,
+
+		// Makes sense
+		'prefer-numeric-literals': ERROR,
 
 		// Controversial change, but makes sense to move towards to reduce the risk of bad people overwriting apply and call
 		// https://github.com/eslint/eslint/issues/ERROR939
-		'prefer-reflect': WARN,
+		// Ignoring because node does not yet support it, so we don't want to get the performance hit of using the compiled ES5 version
+		'prefer-reflect': IGNORE,
+
+		// Makes sense to enforce, exceptions should be opted out of on case by case
+		'prefer-rest-params': ERROR,
 
 		// Sure, why not
 		'prefer-spread': ERROR,
@@ -696,6 +793,138 @@ module.exports = {
 		'prefer-template': IGNORE,
 
 		// Makes sense
-		'require-yield': ERROR
+		'require-yield': ERROR,
+
+		// Makes sense
+		'rest-spread-spacing': [ERROR, 'never'],
+
+		// Importance makes more sense than alphabetical
+		'sort-imports': IGNORE,
+
+		// Makes sense
+		'symbol-description': ERROR,
+
+		// Makes sense
+		'template-curly-spacing': [ERROR, 'never'],
+
+		// Our preference
+		'yield-star-spacing': [ERROR, 'both'],
+
+
+		// --------------------------------------
+		// Plugins
+
+		// Not sure why, but okay
+		'flow-vars/define-flow-type': WARN,
+		'flow-vars/use-flow-type': WARN
 	}
 }
+
+// ------------------------------------
+// Enhancements
+
+// Load data.json file if it exists
+const rules = Object.keys(config.rules)
+let data = {}, devDeps = []
+try {
+	data = require('./package.json') || {}
+	devDeps = Object.keys(data.devDependencies || {})
+}
+catch (err) { }
+
+// Set the parser options depending on our editions
+if (data.editions) {
+	const sourceEdition = data.editions[0]
+	for (let syntaxIndex = 0; syntaxIndex < sourceEdition.syntaxes.length; ++syntaxIndex) {
+		const syntax = sourceEdition.syntaxes[syntaxIndex]
+		if (syntax === 'esnext') {
+			config.parserOptions.ecmaVersion = 8
+			break
+		}
+		else if (syntax.indexOf('es') === 0) {
+			config.parserOptions.ecmaVersion = Number(syntax.substr(2))
+			break
+		}
+	}
+	config.parserOptions.sourceType = sourceEdition.syntaxes.indexOf('import') !== -1 ? 'module' : 'script'
+	config.parserOptions.ecmaFeatures.jsx = sourceEdition.syntaxes.indexOf('jsx') !== -1
+}
+
+// If editions failed to dtermine the ecmaVersion, try determining it from node, otherwise default to v5
+if (!config.parserOptions.ecmaVersion) {
+	const node = data.engines && data.engines.node && data.engines.node.replace('>=', '').replace(/ /g, '').replace(/\..+$/, '')
+	config.parserOptions.ecmaVersion = node >= 6 ? 6 : 5
+}
+
+// Set the environments depending on whether we need them or not
+config.env.es6 = Boolean(config.parserOptions.ecmaVersion && config.parserOptions.ecmaVersion >= 6)
+config.env.node = Boolean(data.engines && data.engines.node)
+config.env.browser = Boolean(data.browser)
+if (config.env.browser) {
+	config.env.commonjs = true
+	if (config.env.node) {
+		config.env['shared-node-browser'] = true
+	}
+}
+
+// If not on legacy javascript, disable esnext rules
+if (config.parserOptions.ecmaVersion && config.parserOptions.ecmaVersion <= 5) {
+	config.rules['no-var'] = IGNORE
+	config.rules['object-shorthand'] = [ERROR, 'never']
+	config.rules['prefer-rest-params'] = IGNORE
+	config.rules['prefer-spread'] = IGNORE
+	config.rules['prefer-const'] = IGNORE
+}
+
+// Add babel parsing if installed
+if (devDeps.indexOf('babel-eslint') !== -1) {
+	config.parser = 'babel-eslint'
+}
+
+// Add react linting if installed
+if (devDeps.indexOf('eslint-plugin-react') !== -1) {
+	config.extends.push('plugin:react/recommended')
+	config.plugins.push('react')
+}
+
+if (devDeps.indexOf('eslint-plugin-babel') !== -1) {
+	// Remove rules that babel rules replace
+	config.plugins.push('babel')
+	const replacements = [
+		'new-cap',
+		'object-curly-spacing'
+	]
+	replacements.forEach(function (key) {
+		if (rules.indexOf(key) !== -1) {
+			config.rules['babel/' + key] = config.rules[key]
+			config.rules[key] = IGNORE
+		}
+	})
+}
+else {
+	// Remove babel rules if not using babel
+	rules.forEach(function (key) {
+		if (key.indexOf('babel/') === 0) {
+			delete config.rules[key]
+		}
+	})
+}
+
+if (devDeps.indexOf('eslint-plugin-flow-vars') !== -1) {
+	// Add flow plugin if installed
+	config.plugins.push('flow-vars')
+}
+else {
+	// Remove flow rules if plugin not installed
+	rules.forEach(function (key) {
+		if (key.indexOf('flow-vars/') === 0) {
+			delete config.rules[key]
+		}
+	})
+}
+
+
+// ------------------------------------
+// Export
+
+module.exports = config

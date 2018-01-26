@@ -2,17 +2,17 @@
 'use strict'
 
 // Import
-const events = require('events')
-const equal = require('assert-helpers').equal
-const joe = require('joe')
-const domain = require('./')
+var events = require('events')
+var equal = require('assert-helpers').equal
+var joe = require('joe')
+var domain = require('../')
 
 // =====================================
 // Tests
 
 joe.describe('domain-browser', function (describe, it) {
 	it('should work on throws', function (done) {
-		const d = domain.create()
+		var d = domain.create()
 		d.on('error', function (err) {
 			equal(err && err.message, 'a thrown error', 'error message')
 			done()
@@ -23,8 +23,8 @@ joe.describe('domain-browser', function (describe, it) {
 	})
 
 	it('should be able to add emitters', function (done) {
-		const d = domain.create()
-		const emitter = new events.EventEmitter()
+		var d = domain.create()
+		var emitter = new events.EventEmitter()
 
 		d.add(emitter)
 		d.on('error', function (err) {
@@ -36,9 +36,9 @@ joe.describe('domain-browser', function (describe, it) {
 	})
 
 	it('should be able to remove emitters', function (done) {
-		const emitter = new events.EventEmitter()
-		const d = domain.create()
-		let domainGotError = false
+		var emitter = new events.EventEmitter()
+		var d = domain.create()
+		var domainGotError = false
 
 		d.add(emitter)
 		d.on('error', function (err) {
@@ -60,7 +60,7 @@ joe.describe('domain-browser', function (describe, it) {
 	})
 
 	it('bind should work', function (done) {
-		const d = domain.create()
+		var d = domain.create()
 		d.on('error', function (err) {
 			equal(err && err.message, 'a thrown error', 'error message')
 			done()
@@ -74,13 +74,13 @@ joe.describe('domain-browser', function (describe, it) {
 	})
 
 	it('intercept should work', function (done) {
-		const d = domain.create()
-		let count = 0
+		var d = domain.create()
+		var count = 0
 		d.on('error', function (err) {
-			if ( count === 0 ) {
+			if (count === 0) {
 				equal(err && err.message, 'a thrown error', 'error message')
 			}
-			else if ( count === 1 ) {
+			else if (count === 1) {
 				equal(err && err.message, 'a passed error', 'error message')
 				done()
 			}
