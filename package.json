@@ -1,6 +1,6 @@
 {
   "name": "domain-browser",
-  "version": "1.1.7",
+  "version": "1.2.0",
   "description": "Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
   "license": "MIT",

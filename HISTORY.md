@@ -1,5 +1,9 @@
 # History
 
+## v1.2.0 2018 January 26
+- `index.js` is now located at `source/index.js`
+- Updated base files
+
 ## v1.1.7 2015 December 12
 - Revert minimum node version from 0.12 back to 0.4
     - Thanks to [Alexander Sorokin](https://github.com/syrnick) for [this comment](https://github.com/bevry/domain-browser/commit/c66ee3445e87955e70d0d60d4515f2d26a81b9c4#commitcomment-14938325)
