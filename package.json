@@ -85,7 +85,7 @@
   "browser": "source/index.js",
   "dependencies": {},
   "devDependencies": {
-    "assert-helpers": "^4.5.0",
+    "assert-helpers": "^5.0.0",
     "eslint": "^4.16.0",
     "joe": "^2.0.2",
     "joe-reporter-console": "^2.0.1",
