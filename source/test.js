@@ -4,13 +4,13 @@
 // Import
 var events = require('events')
 var equal = require('assert-helpers').equal
-var joe = require('joe')
+var kava = require('kava')
 var domain = require('../')
 
 // =====================================
 // Tests
 
-joe.describe('domain-browser', function (describe, it) {
+kava.describe('domain-browser', function (describe, it) {
 	it('should work on throws', function (done) {
 		var d = domain.create()
 		d.on('error', function (err) {
