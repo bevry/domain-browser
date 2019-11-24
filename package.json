@@ -89,7 +89,7 @@
   "browser": "source/index.js",
   "devDependencies": {
     "assert-helpers": "4.10.0",
-    "kava": "3.2.0",
+    "kava": "4.1.0",
     "projectz": "^1.10.0",
     "valid-directory": "^1.1.1"
   },
