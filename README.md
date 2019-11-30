@@ -100,7 +100,8 @@ These amazing people have contributed code to this project:
 <li><a href="http://evansolomon.me">Evan Solomon</a> — <a href="https://github.com/bevry/domain-browser/commits?author=evansolomon" title="View the GitHub contributions of Evan Solomon on repository bevry/domain-browser">view contributions</a></li>
 <li><a href="http://substack.net">James Halliday</a> — <a href="https://github.com/bevry/domain-browser/commits?author=substack" title="View the GitHub contributions of James Halliday on repository bevry/domain-browser">view contributions</a></li>
 <li><a href="twitter.com/guybedford">Guy Bedford</a> — <a href="https://github.com/bevry/domain-browser/commits?author=guybedford" title="View the GitHub contributions of Guy Bedford on repository bevry/domain-browser">view contributions</a></li>
-<li><a href="https://github.com/TrySound">Bogdan Chadkin</a> — <a href="https://github.com/bevry/domain-browser/commits?author=TrySound" title="View the GitHub contributions of Bogdan Chadkin on repository bevry/domain-browser">view contributions</a></li></ul>
+<li><a href="https://github.com/TrySound">Bogdan Chadkin</a> — <a href="https://github.com/bevry/domain-browser/commits?author=TrySound" title="View the GitHub contributions of Bogdan Chadkin on repository bevry/domain-browser">view contributions</a></li>
+<li><a href="http://github.com/apps/dependabot-preview">dependabot-preview[bot]</a> — <a href="https://github.com/bevry/domain-browser/commits?author=dependabot-preview[bot]" title="View the GitHub contributions of dependabot-preview[bot] on repository bevry/domain-browser">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/domain-browser/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
