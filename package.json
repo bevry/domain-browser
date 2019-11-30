@@ -1,6 +1,6 @@
 {
   "name": "domain-browser",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
   "license": "MIT",
@@ -88,9 +88,16 @@
   ],
   "main": "source/index.js",
   "browser": "source/index.js",
+  "jspm": {
+    "map": {
+      "source/index.js": {
+        "node": "@node/domain"
+      }
+    }
+  },
   "devDependencies": {
-    "assert-helpers": "5.5.0",
-    "kava": "4.1.0",
+    "assert-helpers": "^5.5.0",
+    "kava": "^4.1.0",
     "projectz": "^1.12.0",
     "valid-directory": "^1.3.0"
   },
@@ -112,12 +119,5 @@
     "our:verify": "npm run our:verify:directory",
     "our:verify:directory": "npx valid-directory",
     "test": "node ./source/test.js"
-  },
-  "jspm": {
-    "map": {
-      "source/index.js": {
-        "node": "@node/domain"
-      }
-    }
   }
 }
