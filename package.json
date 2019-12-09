@@ -1,6 +1,6 @@
 {
   "name": "domain-browser",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
   "license": "MIT",
@@ -26,6 +26,7 @@
       "daviddm",
       "daviddmdev",
       "---",
+      "githubsponsors",
       "patreon",
       "flattr",
       "liberapay",
@@ -36,6 +37,7 @@
       "wishlist"
     ],
     "config": {
+      "githubSponsorsUsername": "balupton",
       "buymeacoffeeUsername": "balupton",
       "cryptoURL": "https://bevry.me/crypto",
       "flattrUsername": "balupton",
@@ -86,6 +88,7 @@
       }
     }
   ],
+  "type": "commonjs",
   "main": "source/index.js",
   "browser": "source/index.js",
   "jspm": {
@@ -96,10 +99,10 @@
     }
   },
   "devDependencies": {
-    "assert-helpers": "^5.7.0",
-    "kava": "^4.2.0",
-    "projectz": "^1.13.0",
-    "valid-directory": "^1.4.0"
+    "assert-helpers": "^5.8.0",
+    "kava": "^4.3.0",
+    "projectz": "^1.15.0",
+    "valid-directory": "^1.5.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
