@@ -40,14 +40,15 @@ Node's domain module for the web browser. This is merely an evented try...catch 
 <a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
 <ul>
 <li>Install: <code>npm install --save domain-browser</code></li>
-<li>Require: <code>require('domain-browser')</code></li>
+<li>Import: <code>import * as pkg from ('domain-browser')</code></li>
+<li>Require: <code>const pkg = require('domain-browser')</code></li>
 </ul>
 
 <a href="https://jspm.io" title="Native ES Modules CDN"><h3>jspm</h3></a>
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/domain-browser'
+    import * as pkg from '//dev.jspm.io/domain-browser@4.0.0'
 </script>
 ```
 
@@ -56,7 +57,7 @@ Node's domain module for the web browser. This is merely an evented try...catch 
 <p>This package is published with the following editions:</p>
 
 <ul><li><code>domain-browser</code> aliases <code>domain-browser/source/index.js</code></li>
-<li><code>domain-browser/source/index.js</code> is es5 source code with require for modules</li></ul>
+<li><code>domain-browser/source/index.js</code> is ES5 source code for web browsers and <a href="https://nodejs.org" title="Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine">Node.js</a> with <a href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html" title="Node/CJS Modules">Require</a> for modules</li></ul>
 
 <!-- /INSTALL -->
 

@@ -1,22 +1,22 @@
 {
   "name": "domain-browser",
-  "version": "3.5.0",
+  "version": "4.0.0",
   "description": "Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
   "license": "MIT",
   "keywords": [
-    "domain",
-    "trycatch",
-    "try",
+    "amd",
+    "browser",
     "catch",
-    "node-compat",
-    "ender.js",
     "component",
     "component.io",
-    "umd",
-    "amd",
+    "domain",
+    "ender.js",
+    "node-compat",
     "require.js",
-    "browser"
+    "try",
+    "trycatch",
+    "umd"
   ],
   "badges": {
     "list": [
@@ -59,8 +59,7 @@
     "Evan Solomon (http://evansolomon.me)",
     "James Halliday <substack@gmail.com> (http://substack.net)",
     "Guy Bedford <guybedford@gmail.com> (twitter.com/guybedford)",
-    "Bogdan Chadkin <trysound@yandex.ru> (https://github.com/TrySound)",
-    "dependabot-preview[bot] (http://github.com/apps/dependabot-preview)"
+    "Bogdan Chadkin <trysound@yandex.ru> (https://github.com/TrySound)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/domain-browser/issues"
@@ -70,11 +69,11 @@
     "url": "https://github.com/bevry/domain-browser.git"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "editions": [
     {
-      "description": "es5 source code with require for modules",
+      "description": "ES5 source code for web browsers and Node.js with Require for modules",
       "directory": "source",
       "entry": "index.js",
       "tags": [
@@ -83,8 +82,8 @@
         "require"
       ],
       "engines": {
-        "node": "8 || 10 || 12",
-        "browsers": true
+        "node": "10 || 12",
+        "browsers": "defaults"
       }
     }
   ],
@@ -99,10 +98,14 @@
     }
   },
   "devDependencies": {
-    "assert-helpers": "^5.8.0",
-    "kava": "^4.3.0",
-    "projectz": "^1.15.0",
-    "valid-directory": "^1.5.0"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "assert-helpers": "^6.0.0",
+    "kava": "^4.4.0",
+    "projectz": "^1.19.0",
+    "valid-directory": "^1.6.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
@@ -120,7 +123,7 @@
     "our:setup:install": "npm install",
     "our:test": "npm run our:verify && npm test",
     "our:verify": "npm run our:verify:directory",
-    "our:verify:directory": "npx valid-directory",
+    "our:verify:directory": "valid-directory",
     "test": "node ./source/test.js"
   }
 }
