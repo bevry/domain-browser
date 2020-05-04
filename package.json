@@ -1,6 +1,6 @@
 {
   "name": "domain-browser",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
   "license": "MIT",
@@ -10,8 +10,11 @@
     "catch",
     "component",
     "component.io",
+    "dom",
     "domain",
     "ender.js",
+    "es5",
+    "node",
     "node-compat",
     "require.js",
     "try",
@@ -82,7 +85,7 @@
         "require"
       ],
       "engines": {
-        "node": "10 || 12",
+        "node": "10 || 12 || 13 || 14",
         "browsers": "defaults"
       }
     }
@@ -98,21 +101,19 @@
     }
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "assert-helpers": "^6.0.0",
+    "@bevry/update-contributors": "^1.0.1",
+    "assert-helpers": "^6.2.0",
     "kava": "^4.4.0",
-    "projectz": "^1.19.0",
+    "projectz": "^1.19.1",
     "valid-directory": "^1.6.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
     "our:compile": "echo no need for this project",
     "our:deploy": "echo no need for this project",
-    "our:meta": "npm run our:meta:projectz",
-    "our:meta:projectz": "projectz compile",
+    "our:meta": "npm run our:meta:contributors && npm run our:meta:projectz",
+    "our:meta:contributors": "npx @bevry/update-contributors",
+    "our:meta:projectz": "npx projectz compile",
     "our:release": "npm run our:release:prepare && npm run our:release:check-changelog && npm run our:release:check-dirty && npm run our:release:tag && npm run our:release:push",
     "our:release:check-changelog": "cat ./HISTORY.md | grep v$npm_package_version || (echo add a changelog entry for v$npm_package_version && exit -1)",
     "our:release:check-dirty": "git diff --exit-code",
@@ -123,7 +124,7 @@
     "our:setup:install": "npm install",
     "our:test": "npm run our:verify && npm test",
     "our:verify": "npm run our:verify:directory",
-    "our:verify:directory": "valid-directory",
+    "our:verify:directory": "npx valid-directory",
     "test": "node ./source/test.js"
   }
 }
