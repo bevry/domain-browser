@@ -48,7 +48,7 @@ Node's domain module for the web browser. This is merely an evented try...catch 
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/domain-browser@4.1.0'
+    import * as pkg from '//dev.jspm.io/domain-browser@4.2.0'
 </script>
 ```
 
@@ -79,7 +79,7 @@ Node's domain module for the web browser. This is merely an evented try...catch 
 
 These amazing people are maintaining this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/domain-browser/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/domain-browser">view contributions</a></li></ul>
+<ul><li><a href="https://github.com/balupton">Benjamin Lupton</a> — <a href="https://github.com/bevry/domain-browser/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/domain-browser">view contributions</a></li></ul>
 
 <h3>Sponsors</h3>
 
@@ -99,12 +99,11 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/domain-browser/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/domain-browser">view contributions</a></li>
-<li><a href="http://evansolomon.me">Evan Solomon</a> — <a href="https://github.com/bevry/domain-browser/commits?author=evansolomon" title="View the GitHub contributions of Evan Solomon on repository bevry/domain-browser">view contributions</a></li>
-<li><a href="http://substack.net">James Halliday</a> — <a href="https://github.com/bevry/domain-browser/commits?author=substack" title="View the GitHub contributions of James Halliday on repository bevry/domain-browser">view contributions</a></li>
-<li><a href="twitter.com/guybedford">Guy Bedford</a> — <a href="https://github.com/bevry/domain-browser/commits?author=guybedford" title="View the GitHub contributions of Guy Bedford on repository bevry/domain-browser">view contributions</a></li>
+<ul><li><a href="https://github.com/balupton">Benjamin Lupton</a> — <a href="https://github.com/bevry/domain-browser/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/domain-browser">view contributions</a></li>
 <li><a href="https://github.com/TrySound">Bogdan Chadkin</a> — <a href="https://github.com/bevry/domain-browser/commits?author=TrySound" title="View the GitHub contributions of Bogdan Chadkin on repository bevry/domain-browser">view contributions</a></li>
-<li><a href="http://github.com/apps/dependabot-preview">dependabot-preview[bot]</a> — <a href="https://github.com/bevry/domain-browser/commits?author=dependabot-preview[bot]" title="View the GitHub contributions of dependabot-preview[bot] on repository bevry/domain-browser">view contributions</a></li></ul>
+<li><a href="https://github.com/evansolomon">Evan Solomon</a> — <a href="https://github.com/bevry/domain-browser/commits?author=evansolomon" title="View the GitHub contributions of Evan Solomon on repository bevry/domain-browser">view contributions</a></li>
+<li><a href="https://github.com/guybedford">Guy Bedford</a> — <a href="https://github.com/bevry/domain-browser/commits?author=guybedford" title="View the GitHub contributions of Guy Bedford on repository bevry/domain-browser">view contributions</a></li>
+<li><a href="https://github.com/substack">James Halliday</a> — <a href="https://github.com/bevry/domain-browser/commits?author=substack" title="View the GitHub contributions of James Halliday on repository bevry/domain-browser">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/domain-browser/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 

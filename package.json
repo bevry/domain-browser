@@ -1,6 +1,6 @@
 {
   "name": "domain-browser",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
   "license": "MIT",
@@ -10,7 +10,6 @@
     "catch",
     "component",
     "component.io",
-    "dom",
     "domain",
     "ender.js",
     "es5",
@@ -49,20 +48,24 @@
       "patreonUsername": "bevry",
       "paypalURL": "https://bevry.me/paypal",
       "wishlistURL": "https://bevry.me/wishlist",
-      "travisTLD": "com"
+      "travisTLD": "com",
+      "githubUsername": "bevry",
+      "githubRepository": "domain-browser",
+      "githubSlug": "bevry/domain-browser",
+      "npmPackageName": "domain-browser"
     }
   },
   "funding": "https://bevry.me/fund",
   "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
-    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
   "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
-    "Evan Solomon (http://evansolomon.me)",
-    "James Halliday <substack@gmail.com> (http://substack.net)",
-    "Guy Bedford <guybedford@gmail.com> (twitter.com/guybedford)",
-    "Bogdan Chadkin <trysound@yandex.ru> (https://github.com/TrySound)"
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
+    "Bogdan Chadkin <trysound@yandex.ru> (https://github.com/TrySound)",
+    "Evan Solomon (https://github.com/evansolomon)",
+    "Guy Bedford <guybedford@gmail.com> (https://github.com/guybedford)",
+    "James Halliday <substack@gmail.com> (https://github.com/substack)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/domain-browser/issues"
@@ -101,10 +104,10 @@
     }
   },
   "devDependencies": {
-    "@bevry/update-contributors": "^1.0.1",
-    "assert-helpers": "^6.2.0",
-    "kava": "^4.4.0",
-    "projectz": "^1.19.1",
+    "@bevry/update-contributors": "^1.5.0",
+    "assert-helpers": "^6.4.0",
+    "kava": "^5.0.0",
+    "projectz": "^2.1.0",
     "valid-directory": "^1.6.0"
   },
   "scripts": {
@@ -112,8 +115,8 @@
     "our:compile": "echo no need for this project",
     "our:deploy": "echo no need for this project",
     "our:meta": "npm run our:meta:contributors && npm run our:meta:projectz",
-    "our:meta:contributors": "npx @bevry/update-contributors",
-    "our:meta:projectz": "npx projectz compile",
+    "our:meta:contributors": "update-contributors",
+    "our:meta:projectz": "projectz compile",
     "our:release": "npm run our:release:prepare && npm run our:release:check-changelog && npm run our:release:check-dirty && npm run our:release:tag && npm run our:release:push",
     "our:release:check-changelog": "cat ./HISTORY.md | grep v$npm_package_version || (echo add a changelog entry for v$npm_package_version && exit -1)",
     "our:release:check-dirty": "git diff --exit-code",
@@ -124,7 +127,7 @@
     "our:setup:install": "npm install",
     "our:test": "npm run our:verify && npm test",
     "our:verify": "npm run our:verify:directory",
-    "our:verify:directory": "npx valid-directory",
+    "our:verify:directory": "valid-directory",
     "test": "node ./source/test.js"
   }
 }
