@@ -5,7 +5,7 @@
 var events = require("events");
 var equal = require("assert-helpers").equal;
 var kava = require("kava");
-var domain = require("./");
+var domain = require("./index.js");
 
 // =====================================
 // Tests
