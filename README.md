@@ -7,7 +7,7 @@
 
 <!-- BADGES/ -->
 
-<span class="badge-travisci"><a href="http://travis-ci.com/bevry/domain-browser" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/com/bevry/domain-browser/master.svg" alt="Travis CI Build Status" /></a></span>
+<span class="badge-githubworkflow"><a href="https://github.com/bevry/domain-browser/actions?query=workflow%3Abevry" title="View the status of this project's GitHub Workflow: bevry"><img src="https://github.com/bevry/domain-browser/workflows/bevry/badge.svg" alt="Status of the GitHub Workflow: bevry" /></a></span>
 <span class="badge-npmversion"><a href="https://npmjs.org/package/domain-browser" title="View this project on NPM"><img src="https://img.shields.io/npm/v/domain-browser.svg" alt="NPM version" /></a></span>
 <span class="badge-npmdownloads"><a href="https://npmjs.org/package/domain-browser" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/domain-browser.svg" alt="NPM downloads" /></a></span>
 <span class="badge-daviddm"><a href="https://david-dm.org/bevry/domain-browser" title="View the status of this project's dependencies on DavidDM"><img src="https://img.shields.io/david/bevry/domain-browser.svg" alt="Dependency Status" /></a></span>
@@ -48,7 +48,7 @@ Node's domain module for the web browser. This is merely an evented try...catch 
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/domain-browser@4.19.0'
+    import * as pkg from '//dev.jspm.io/domain-browser@4.20.0'
 </script>
 ```
 

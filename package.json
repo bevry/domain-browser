@@ -1,6 +1,6 @@
 {
   "name": "domain-browser",
-  "version": "4.19.0",
+  "version": "4.20.0",
   "description": "Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
   "license": "MIT",
@@ -22,7 +22,7 @@
   ],
   "badges": {
     "list": [
-      "travisci",
+      "githubworkflow",
       "npmversion",
       "npmdownloads",
       "daviddm",
@@ -39,6 +39,7 @@
       "wishlist"
     ],
     "config": {
+      "githubWorkflow": "bevry",
       "githubSponsorsUsername": "balupton",
       "buymeacoffeeUsername": "balupton",
       "cryptoURL": "https://bevry.me/crypto",
@@ -48,7 +49,6 @@
       "patreonUsername": "bevry",
       "paypalURL": "https://bevry.me/paypal",
       "wishlistURL": "https://bevry.me/wishlist",
-      "travisTLD": "com",
       "githubUsername": "bevry",
       "githubRepository": "domain-browser",
       "githubSlug": "bevry/domain-browser",
@@ -89,7 +89,7 @@
         "require"
       ],
       "engines": {
-        "node": "10 || 12 || 14 || 15",
+        "node": "10 || 12 || 14",
         "browsers": "defaults"
       }
     }
@@ -105,11 +105,11 @@
     }
   },
   "devDependencies": {
-    "@bevry/update-contributors": "^1.17.0",
-    "assert-helpers": "^8.1.0",
-    "kava": "^5.12.0",
-    "projectz": "^2.16.0",
-    "valid-directory": "^3.4.0"
+    "@bevry/update-contributors": "^1.18.0",
+    "assert-helpers": "^8.2.0",
+    "kava": "^5.13.0",
+    "projectz": "^2.18.0",
+    "valid-directory": "^3.7.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
@@ -122,7 +122,7 @@
     "our:release:check-changelog": "cat ./HISTORY.md | grep v$npm_package_version || (echo add a changelog entry for v$npm_package_version && exit -1)",
     "our:release:check-dirty": "git diff --exit-code",
     "our:release:prepare": "npm run our:clean && npm run our:compile && npm run our:test && npm run our:meta",
-    "our:release:push": "git push origin master && git push origin --tags",
+    "our:release:push": "git push origin && git push origin --tags",
     "our:release:tag": "export MESSAGE=$(cat ./HISTORY.md | sed -n \"/## v$npm_package_version/,/##/p\" | sed 's/## //' | awk 'NR>1{print buf}{buf = $0}') && test \"$MESSAGE\" || (echo 'proper changelog entry not found' && exit -1) && git tag v$npm_package_version -am \"$MESSAGE\"",
     "our:setup": "npm run our:setup:install",
     "our:setup:install": "npm install",
