@@ -48,7 +48,7 @@ Node's domain module for the web browser. This is merely an evented try...catch 
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/domain-browser@4.20.0'
+    import * as pkg from '//dev.jspm.io/domain-browser@4.21.0'
 </script>
 ```
 

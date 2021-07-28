@@ -1,6 +1,6 @@
 {
   "name": "domain-browser",
-  "version": "4.20.0",
+  "version": "4.21.0",
   "description": "Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
   "license": "MIT",
@@ -89,7 +89,7 @@
         "require"
       ],
       "engines": {
-        "node": "10 || 12 || 14",
+        "node": "10 || 12 || 14 || 16",
         "browsers": "defaults"
       }
     }
@@ -105,9 +105,9 @@
     }
   },
   "devDependencies": {
-    "@bevry/update-contributors": "^1.18.0",
+    "@bevry/update-contributors": "^1.19.0",
     "assert-helpers": "^8.2.0",
-    "kava": "^5.13.0",
+    "kava": "^5.14.0",
     "projectz": "^2.18.0",
     "valid-directory": "^3.7.0"
   },
