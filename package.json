@@ -107,7 +107,7 @@
   },
   "devDependencies": {
     "@bevry/update-contributors": "^1.22.0",
-    "assert-helpers": "^8.4.0",
+    "assert-helpers": "^10.1.0",
     "kava": "^5.15.0",
     "projectz": "^2.23.0",
     "valid-directory": "^4.0.0"
