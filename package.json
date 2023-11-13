@@ -1,6 +1,6 @@
 {
   "name": "domain-browser",
-  "version": "4.23.0",
+  "version": "5.0.0",
   "description": "Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
   "license": "Artistic-2.0",
@@ -76,7 +76,7 @@
     "url": "https://github.com/bevry/domain-browser.git"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=4"
   },
   "editions": [
     {
@@ -90,7 +90,7 @@
         "require"
       ],
       "engines": {
-        "node": "10 || 12 || 14 || 16 || 18 || 20 || 21",
+        "node": "4 || 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
         "browsers": "defaults"
       }
     }
@@ -106,14 +106,14 @@
     }
   },
   "devDependencies": {
-    "@bevry/update-contributors": "^1.22.0",
-    "assert-helpers": "^8.4.0",
-    "kava": "^5.15.0",
+    "@bevry/update-contributors": "^1.23.0",
+    "assert-helpers": "^11.2.0",
+    "kava": "^7.1.0",
     "projectz": "^2.23.0",
-    "valid-directory": "^4.0.0"
+    "valid-directory": "^4.1.0"
   },
   "scripts": {
-    "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
+    "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
     "our:compile": "printf '%s\n' 'no need for this project'",
     "our:deploy": "printf '%s\n' 'no need for this project'",
     "our:meta": "npm run our:meta:contributors && npm run our:meta:projectz",
