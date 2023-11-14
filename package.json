@@ -1,6 +1,6 @@
 {
   "name": "domain-browser",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.",
   "homepage": "https://github.com/bevry/domain-browser",
   "license": "Artistic-2.0",
@@ -107,10 +107,10 @@
   },
   "devDependencies": {
     "@bevry/update-contributors": "^1.23.0",
-    "assert-helpers": "^11.2.0",
+    "assert-helpers": "^11.3.0",
     "kava": "^7.1.0",
-    "projectz": "^2.23.0",
-    "valid-directory": "^4.1.0"
+    "projectz": "^3.0.0",
+    "valid-directory": "^4.2.0"
   },
   "scripts": {
     "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
