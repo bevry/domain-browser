@@ -1,9 +1,8 @@
 <!-- TITLE/ -->
 
-<h1>domain-browser</h1>
+# domain-browser
 
 <!-- /TITLE -->
-
 
 <!-- BADGES/ -->
 
@@ -25,65 +24,71 @@
 
 <!-- /BADGES -->
 
-
 <!-- DESCRIPTION/ -->
 
 Node's domain module for the web browser. This is merely an evented try...catch with the same API as node, nothing more.
 
 <!-- /DESCRIPTION -->
 
-
 <!-- INSTALL/ -->
 
-<h2>Install</h2>
+## Install
 
-<a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
-<ul>
-<li>Install: <code>npm install --save domain-browser</code></li>
-<li>Import: <code>import * as pkg from ('domain-browser')</code></li>
-<li>Require: <code>const pkg = require('domain-browser')</code></li>
-</ul>
+### [npm](https://npmjs.com "npm is a package manager for javascript")
 
-<a href="https://jspm.io" title="Native ES Modules CDN"><h3>jspm</h3></a>
+-   Install: `npm install --save domain-browser`
+-   Import: `import * as pkg from ('domain-browser')`
+-   Require: `const pkg = require('domain-browser')`
+
+### [jspm](https://jspm.io "Native ES Modules CDN")
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/domain-browser@5.5.0'
+    import * as pkg from '//dev.jspm.io/domain-browser@5.6.0'
 </script>
 ```
+### [Editions](https://editions.bevry.me "Editions are the best way to produce and consume packages you care about.")
 
-<h3><a href="https://editions.bevry.me" title="Editions are the best way to produce and consume packages you care about.">Editions</a></h3>
-
-<p>This package is published with the following editions:</p>
-
-<ul><li><code>domain-browser</code> aliases <code>domain-browser/source/index.js</code></li>
-<li><code>domain-browser/source/index.js</code> is ES5 source code for web browsers and <a href="https://nodejs.org" title="Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine">Node.js</a> with <a href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html" title="Node/CJS Modules">Require</a> for modules</li></ul>
+This package is published with the following editions:
+-   `domain-browser` aliases `domain-browser/source/index.js`
+-   `domain-browser/source/index.js` is ES5 source code for web browsers and [Node.js](https://nodejs.org "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine") 4 || 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21 with [Require](https://nodejs.org/dist/latest-v5.x/docs/api/modules.html "Node/CJS Modules") for modules
 
 <!-- /INSTALL -->
 
-
 <!-- HISTORY/ -->
 
-<h2>History</h2>
+## History
 
-<a href="https://github.com/bevry/domain-browser/blob/master/HISTORY.md#files">Discover the release history by heading on over to the <code>HISTORY.md</code> file.</a>
+[Discover the release history by heading on over to the `HISTORY.md` file.](https://github.com/bevry/domain-browser/blob/HEAD/HISTORY.md#files)
 
 <!-- /HISTORY -->
 
-
 <!-- BACKERS/ -->
 
-<h2>Backers</h2>
+## Backers
 
-<h3>Maintainers</h3>
+### Code
 
-These amazing people are maintaining this project:
+[Discover how to contribute via the `CONTRIBUTING.md` file.](https://github.com/bevry/domain-browser/blob/HEAD/CONTRIBUTING.md#files)
 
-<ul><li><a href="https://github.com/balupton">Benjamin Lupton</a> — <a href="https://github.com/bevry/domain-browser/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/domain-browser">view contributions</a></li></ul>
+#### Authors
 
-<h3>Sponsors</h3>
+-   [Benjamin Lupton](https://balupton.com) — Accelerating collaborative wisdom.
 
-No sponsors yet! Will you be the first?
+#### Maintainers
+
+-   [Benjamin Lupton](https://github.com/balupton) — Accelerating collaborative wisdom.
+
+#### Contributors
+
+-   [Benjamin Lupton](https://github.com/balupton) — [view contributions](https://github.com/bevry/domain-browser/commits?author=balupton "View the GitHub contributions of Benjamin Lupton on repository bevry/domain-browser")
+-   [Bogdan Chadkin](https://github.com/TrySound) — [view contributions](https://github.com/bevry/domain-browser/commits?author=TrySound "View the GitHub contributions of Bogdan Chadkin on repository bevry/domain-browser")
+-   [Evan Solomon](https://github.com/evansolomon) — [view contributions](https://github.com/bevry/domain-browser/commits?author=evansolomon "View the GitHub contributions of Evan Solomon on repository bevry/domain-browser")
+-   [Guy Bedford](https://github.com/guybedford) — [view contributions](https://github.com/bevry/domain-browser/commits?author=guybedford "View the GitHub contributions of Guy Bedford on repository bevry/domain-browser")
+-   [James Halliday](https://github.com/substack) — [view contributions](https://github.com/bevry/domain-browser/commits?author=substack "View the GitHub contributions of James Halliday on repository bevry/domain-browser")
+-   [Sammy filly](https://github.com/X-oss-byte) — [view contributions](https://github.com/bevry/domain-browser/commits?author=X-oss-byte "View the GitHub contributions of Sammy filly on repository bevry/domain-browser")
+
+### Finances
 
 <span class="badge-githubsponsors"><a href="https://github.com/sponsors/balupton" title="Donate to this project using GitHub Sponsors"><img src="https://img.shields.io/badge/github-donate-yellow.svg" alt="GitHub Sponsors donate button" /></a></span>
 <span class="badge-thanksdev"><a href="https://thanks.dev/u/gh/bevry" title="Donate to this project using ThanksDev"><img src="https://img.shields.io/badge/thanksdev-donate-yellow.svg" alt="ThanksDev donate button" /></a></span>
@@ -94,32 +99,45 @@ No sponsors yet! Will you be the first?
 <span class="badge-crypto"><a href="https://bevry.me/crypto" title="Donate to this project using Cryptocurrency"><img src="https://img.shields.io/badge/crypto-donate-yellow.svg" alt="crypto donate button" /></a></span>
 <span class="badge-paypal"><a href="https://bevry.me/paypal" title="Donate to this project using Paypal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="PayPal donate button" /></a></span>
 
-<h3>Contributors</h3>
+#### Sponsors
 
-These amazing people have contributed code to this project:
+-   [Andrew Nesbitt](https://nesbitt.io) — Software engineer and researcher
+-   [Balsa](https://balsa.com) — We're Balsa, and we're building tools for builders.
+-   [Codecov](https://codecov.io/) — Empower developers with tools to improve code quality and testing.
+-   [Poonacha Medappa](https://poonachamedappa.com)
+-   [Rob Morris](https://github.com/Rob-Morris)
+-   [Sentry](https://sentry.io) — Real-time crash reporting for your web apps, mobile apps, and games.
+-   [Syntax](https://syntax.fm) — Syntax Podcast
 
-<ul><li><a href="https://github.com/balupton">Benjamin Lupton</a> — <a href="https://github.com/bevry/domain-browser/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/domain-browser">view contributions</a></li>
-<li><a href="https://github.com/TrySound">Bogdan Chadkin</a> — <a href="https://github.com/bevry/domain-browser/commits?author=TrySound" title="View the GitHub contributions of Bogdan Chadkin on repository bevry/domain-browser">view contributions</a></li>
-<li><a href="https://github.com/evansolomon">Evan Solomon</a> — <a href="https://github.com/bevry/domain-browser/commits?author=evansolomon" title="View the GitHub contributions of Evan Solomon on repository bevry/domain-browser">view contributions</a></li>
-<li><a href="https://github.com/guybedford">Guy Bedford</a> — <a href="https://github.com/bevry/domain-browser/commits?author=guybedford" title="View the GitHub contributions of Guy Bedford on repository bevry/domain-browser">view contributions</a></li>
-<li><a href="https://github.com/substack">James Halliday</a> — <a href="https://github.com/bevry/domain-browser/commits?author=substack" title="View the GitHub contributions of James Halliday on repository bevry/domain-browser">view contributions</a></li>
-<li><a href="https://github.com/X-oss-byte">Sammy filly</a> — <a href="https://github.com/bevry/domain-browser/commits?author=X-oss-byte" title="View the GitHub contributions of Sammy filly on repository bevry/domain-browser">view contributions</a></li></ul>
+#### Donors
 
-<a href="https://github.com/bevry/domain-browser/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
+-   [Andrew Nesbitt](https://nesbitt.io)
+-   [Balsa](https://balsa.com)
+-   [Chad](https://opencollective.com/chad8)
+-   [Codecov](https://codecov.io/)
+-   [entroniq](https://gitlab.com/entroniq)
+-   [Jean-Luc Geering](https://github.com/jlgeering)
+-   [Michael Duane Mooring](https://mdm.cc)
+-   [Mohammed Shah](https://github.com/smashah)
+-   [Poonacha Medappa](https://poonachamedappa.com)
+-   [Rob Morris](https://github.com/Rob-Morris)
+-   [Sentry](https://sentry.io)
+-   [ServieJS](https://github.com/serviejs)
+-   [Skunk Team](https://skunk.team)
+-   [Syntax](https://syntax.fm)
 
 <!-- /BACKERS -->
 
-
 <!-- LICENSE/ -->
 
-<h2>License</h2>
+## License
 
 Unless stated otherwise all works are:
 
-<ul><li>Copyright &copy; 2013+ <a href="http://bevry.me">Bevry Pty Ltd</a></li></ul>
+-   Copyright &copy; [Benjamin Lupton](https://balupton.com)
 
 and licensed under:
 
-<ul><li><a href="http://spdx.org/licenses/Artistic-2.0.html">Artistic License 2.0</a></li></ul>
+-   [Artistic License 2.0](http://spdx.org/licenses/Artistic-2.0.html)
 
 <!-- /LICENSE -->
